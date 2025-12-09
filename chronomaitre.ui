@@ -7,11 +7,92 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>658</height>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>ChronoMaitre</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* --- 1. LE FOND GÉNÉRAL --- */
+QMainWindow, QWidget#centralwidget {
+    background-color: #2b2b2b;
+}
+
+/* --- 2. L'ÉCRAN LCD --- */
+QLCDNumber {
+    background-color: black;
+    color: red;
+    border: 2px solid #444;
+    border-radius: 4px;
+}
+
+/* --- 3. LES BOUTONS (Style par défaut) --- */
+QPushButton {
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #555; /* Gris par défaut si pas de nom spécifique */
+}
+
+/* --- 4. COULEURS SPÉCIFIQUES (Adapté à vos noms) --- */
+
+/* Bouton Démarrer (VERT) */
+/* Attention : j'utilise votre orthographe &quot;demarer&quot; vue sur l'image */
+QPushButton#demarer {
+    background-color: #27ae60;
+}
+QPushButton#demarer:hover {
+    background-color: #2ecc71;
+}
+QPushButton#demarer:pressed {
+    background-color: #1e8449;
+}
+
+/* Bouton Retenir (GRIS) */
+QPushButton#retenir {
+    background-color: #555555;
+    color: #aaaaaa;
+}
+
+/* Bouton Exporter (BLEU) */
+QPushButton#exporter {
+    background-color: #2980b9;
+}
+QPushButton#exporter:hover {
+    background-color: #3498db;
+}
+
+/* --- 5. LE TABLEAU --- */
+/* J'utilise le nom &quot;tableau&quot; vu sur votre image */
+QTableView#tableau {
+    background-color: #2b2b2b;
+    border: none;
+    gridline-color: #2b2b2b;
+}
+
+QHeaderView::section {
+    background-color: #2c3e50;
+    color: white;
+    padding: 6px;
+    border: none;
+    font-weight: bold;
+}
+
+QTableView::item {
+    background-color: #4dd0e1;
+    color: black;
+    padding: 5px;
+    border-bottom: 1px solid #2b2b2b;
+}
+
+QTableView::item:selected {
+    background-color: #00bcd4;
+    color: white;
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="verticalLayoutWidget">
@@ -25,7 +106,7 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QLCDNumber" name="lcdNumber">
+      <widget class="QLCDNumber" name="timer">
        <property name="maximumSize">
         <size>
          <width>10000</width>
@@ -37,7 +118,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="demarer">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -50,7 +131,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="retenir">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -65,7 +146,7 @@
       </layout>
      </item>
      <item>
-      <widget class="QTableView" name="tableView">
+      <widget class="QTableView" name="tableau">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -78,10 +159,13 @@
          <height>1000</height>
         </size>
        </property>
+       <property name="lineWidth">
+        <number>9</number>
+       </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="exporter">
        <property name="maximumSize">
         <size>
          <width>500</width>
