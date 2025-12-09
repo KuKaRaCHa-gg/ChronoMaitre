@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ChronoMaitre</class>
- <widget class="QMainWindow" name="ChronoMaitre">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -106,7 +106,7 @@ QTableView::item:selected {
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QLCDNumber" name="timer">
+      <widget class="ChronoMaitre" name="timer">
        <property name="maximumSize">
         <size>
          <width>10000</width>
@@ -118,7 +118,7 @@ QTableView::item:selected {
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QPushButton" name="demarer">
+        <widget class="QPushButton" name="demarrer">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -126,7 +126,7 @@ QTableView::item:selected {
           </size>
          </property>
          <property name="text">
-          <string>Démarer</string>
+          <string>Démarrer</string>
          </property>
         </widget>
        </item>
@@ -189,12 +189,19 @@ QTableView::item:selected {
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ChronoMaitre</class>
+   <extends>QLCDNumber</extends>
+   <header>chronomaitre.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -9,17 +9,18 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    chronomaitre.cpp \
     main.cpp \
-    chronomaitre.cpp
+    mainwindow.cpp
 
 HEADERS += \
-    chronomaitre.h
+    chronomaitre.h \
+    mainwindow.h
 
 FORMS += \
-    chronomaitre.ui
+    mainwindow.ui
 
-TRANSLATIONS += \
-    ChronoMaitre_fr_FR.ts
+TRANSLATIONS +=
 CONFIG += lrelease
 CONFIG += embed_translations
 
