@@ -1,0 +1,76 @@
+QMainWindow, QWidget {
+    background-color: #2b2b2b;
+    color: white;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+QLCDNumber {
+    background-color: black;
+    color: red;
+    border: 2px solid #444;
+    border-radius: 4px;
+}
+
+QPushButton {
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    min-height: 20px;
+}
+
+/* ÉTAT DÉSACTIVÉ (GRIS) POUR TOUS LES BOUTONS */
+QPushButton:disabled {
+    background-color: #444444 !important;
+    color: #888888 !important;
+}
+
+/* BOUTON DÉMARRER */
+QPushButton#demarrer {
+    background-color: #27ae60;
+}
+QPushButton#demarrer:hover {
+    background-color: #2ecc71;
+}
+
+/* BOUTON RETENIR -> DEVIENT BLEU QUAND ACTIF */
+QPushButton#retenir {
+    background-color: #2980b9;
+}
+QPushButton#retenir:hover {
+    background-color: #3498db;
+}
+
+/* BOUTON EXPORTER -> LARGEUR TOTALE ET BLEU QUAND ACTIF */
+QPushButton#exporter {
+    background-color: #2980b9;
+    padding: 15px;
+    font-size: 16px;
+    text-align: center;
+}
+QPushButton#exporter:hover {
+    background-color: #3498db;
+}
+
+/* TABLEAU */
+QTableView#tableau {
+    background-color: #2b2b2b;
+    border: none;
+    gridline-color: #2b2b2b;
+}
+
+QHeaderView::section {
+    background-color: #2c3e50;
+    color: white;
+    padding: 6px;
+    border: none;
+    font-weight: bold;
+}
+
+QTableView::item {
+    background-color: #4dd0e1;
+    color: black;
+    padding: 5px;
+}

@@ -5,11 +5,14 @@ ChronoMaitre::ChronoMaitre(QWidget *parent) : QLCDNumber(parent)
     setDigitCount(12);
     display("00:00:00.000");
     connect(&timer, &QTimer::timeout, this, &ChronoMaitre::tic);
+    this->lastLap = "00:00:00.000";
 }
 
 void ChronoMaitre::startStop()
 {
+
     if (!running) {
+        this->lastLap = "00:00:00.000";
         elapsed.restart();
         timer.start(10);
         running = true;
@@ -32,10 +35,14 @@ void ChronoMaitre::tic()
 
 void ChronoMaitre::lapRequest()
 {
-    if (!running) return;
-
     // Temps actuel
     QString time = currentTime;
+    if (!running) return;
+    if (lastLap=="00:00:00.000"){
+        lastLap=time;
+        emit lap(time,"00:00:00.000");
+    }else{
+
 
     // Calcule l’écart
     QTime t1 = QTime::fromString(lastLap, "hh:mm:ss.zzz");
@@ -49,4 +56,5 @@ void ChronoMaitre::lapRequest()
     lastLap = time;
 
     emit lap(time, gapStr);
+    }
 }
