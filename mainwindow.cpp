@@ -24,6 +24,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainW
     connect(ui->exporter, &QPushButton::clicked, this,       &MainWindow::save);
 
     ui->retenir->setEnabled(false);
+    ui->exporter->setEnabled(false);
 }
 
 MainWindow::~MainWindow()
@@ -53,6 +54,7 @@ void MainWindow::lap(QString time, QString gap)
     row[1]->setTextAlignment(Qt::AlignCenter);
 
     model->appendRow(row);
+    ui->exporter->setEnabled(true);
 }
 
 void MainWindow::save()
